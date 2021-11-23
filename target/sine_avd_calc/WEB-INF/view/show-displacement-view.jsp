@@ -6,7 +6,7 @@
 <br>
 Frequency: ${param.frequency}
 <br>
-New frequency: ${frequencyAttribute}
+displacement: ${displacementAttribute}
 <br>
 Acceleration: ${param.acceleration}
 </body>

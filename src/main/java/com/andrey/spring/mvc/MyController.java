@@ -27,8 +27,10 @@ public class MyController {
     public String showDisplacement(HttpServletRequest request, Model model){
         String frequency = request.getParameter("frequency");
         String acceleration = request.getParameter("acceleration");
-        Double newFrequency = Double.parseDouble(frequency);
-        model.addAttribute("frequencyAttribute", newFrequency);
+        Double frequencyDouble = Double.parseDouble(frequency);
+        Double accelerationDouble = Double.parseDouble(acceleration);
+        Double displacementDouble = accelerationDouble*100/((2*3.14*frequencyDouble)*(2*3.14*frequencyDouble));
+        model.addAttribute("displacementAttribute", displacementDouble);
         return "show-displacement-view";
     }
 

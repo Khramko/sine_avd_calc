@@ -5,12 +5,12 @@
 <br>
 <br>
 <form action="showDisplacement" method="get">
-    <input type="number" name="frequency"
+    <input type="number"   step="0.01" name="frequency"
     placeholder="Write frequency, Hz"/>
     <br>
     <br>
     <br>
-    <input type="number" name="acceleration"
+    <input type="number" step="0.01" name="acceleration"
            placeholder="Write acceleration, g"/>
     <br>
     <br>
