@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2> Please enter frequence, Hz</h2>
+<h2> Please enter frequence, acceleration</h2>
 <br>
 <br>
 <form action="showDisplacement" method="get">

@@ -29,7 +29,7 @@ public class MyController {
         String acceleration = request.getParameter("acceleration");
         Double frequencyDouble = Double.parseDouble(frequency);
         Double accelerationDouble = Double.parseDouble(acceleration);
-        Double displacementDouble = accelerationDouble*100/((2*3.14*frequencyDouble)*(2*3.14*frequencyDouble));
+        Double displacementDouble = accelerationDouble*9780/(Math.pow(2*3.14159265359*frequencyDouble,2));
         model.addAttribute("displacementAttribute", displacementDouble);
         return "show-displacement-view";
     }
