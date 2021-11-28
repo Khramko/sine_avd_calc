@@ -20,15 +20,15 @@ public class MyController {
         return "ask-frequency-acceleration-view";
     }
 
-    @RequestMapping("showDisplacement")
-    public String showDisplacement(@ModelAttribute("sineForm") SineForm sineForm){
+    @RequestMapping("showResult")
+    public String showResult(@ModelAttribute("sineForm") SineForm sineForm){
 
     double velocity = sineForm.calculateVelocity();
     double displacement = sineForm.calculateDisplacement();
     sineForm.setVelocity(velocity);
     sineForm.setDisplacement(displacement);
 
-        return "show-displacement-view";
+        return "show-result-view";
     }
 
 
