@@ -4,12 +4,12 @@
 <h2> Calculation result:</h2>
 <br>
 <br>
-Frequency: ${initialData.frequency}, Hz
+Frequency: ${sineForm.frequency}, Hz
 <br><br>
-Displacement: ${initialData.displacement}, ${initialData.displacementUnit}
+Displacement: ${sineForm.displacement}, ${sineForm.displacementUnitCoefficient}
 <br><br>
-Velocity: ${initialData.velocity}, ${initialData.velocityUnit}
+Velocity: ${sineForm.velocity}, ${sineForm.velocityUnitCoefficient}
 <br><br>
-Acceleration: ${initialData.acceleration}, ${initialData.accelerationUnit}
+Acceleration: ${sineForm.acceleration}, ${sineForm.accelerationUnitCoefficient}
 </body>
 </html>
