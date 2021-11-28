@@ -6,10 +6,10 @@
 <br>
 Frequency: ${sineForm.frequency}, Hz
 <br><br>
-Displacement: ${sineForm.displacement}, ${sineForm.displacementUnitCoefficient}
+Displacement: ${sineForm.displacement}, ${sineForm.getDisplacementUnit()}
 <br><br>
-Velocity: ${sineForm.velocity}, ${sineForm.velocityUnitCoefficient}
+Velocity: ${sineForm.velocity}, ${sineForm.getVelocityUnit()}
 <br><br>
-Acceleration: ${sineForm.acceleration}, ${sineForm.accelerationUnitCoefficient}
+Acceleration: ${sineForm.acceleration}, ${sineForm.getAccelerationUnit()}
 </body>
 </html>
