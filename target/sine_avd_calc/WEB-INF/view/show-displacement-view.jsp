@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2> Your entered frequence</h2>
+<h2> Calculation result:</h2>
 <br>
 <br>
-Frequency: ${param.frequency}
-<br>
-displacement: ${displacementAttribute}
-<br>
-Acceleration: ${param.acceleration}
+Frequency: ${initialData.frequency}, Hz
+<br><br>
+Displacement: ${initialData.displacement}, ${initialData.displacementUnit}
+<br><br>
+Velocity: ${initialData.velocity}, ${initialData.velocityUnit}
+<br><br>
+Acceleration: ${initialData.acceleration}, ${initialData.accelerationUnit}
 </body>
 </html>

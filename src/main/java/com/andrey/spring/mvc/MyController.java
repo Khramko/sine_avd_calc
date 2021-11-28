@@ -3,9 +3,11 @@ package com.andrey.spring.mvc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpServletRequest;
+
 
 @Controller
 public class MyController {
@@ -15,22 +17,21 @@ public class MyController {
         return "first-view";
     }
     @RequestMapping("/askFrequencyAcceleration")
-    public String askFrequencyAcceleration(){
+    public String askFrequencyAcceleration(Model model){
+        model.addAttribute("initialData", new InitialData());
         return "ask-frequency-acceleration-view";
     }
-//    @RequestMapping("showDisplacement")
-//    public String showDisplacement(){
-//        return "show-displacement-view";
-//    }
 
     @RequestMapping("showDisplacement")
-    public String showDisplacement(HttpServletRequest request, Model model){
-        String frequency = request.getParameter("frequency");
-        String acceleration = request.getParameter("acceleration");
-        Double frequencyDouble = Double.parseDouble(frequency);
-        Double accelerationDouble = Double.parseDouble(acceleration);
-        Double displacementDouble = accelerationDouble*9780/(Math.pow(2*3.14159265359*frequencyDouble,2));
-        model.addAttribute("displacementAttribute", displacementDouble);
+    public String showDisplacement(@ModelAttribute("initialData") InitialData initialData){
+    double frequency = initialData.getFrequency();
+
+    double acceleration = initialData.getAcceleration();
+    double accelerationUnit = initialData.getAccelerationUnit();
+    //double velocity =
+    double displacement = acceleration*1000*accelerationUnit/(Math.pow(2*3.14159265359*frequency,2));
+    initialData.setDisplacement(displacement);
+
         return "show-displacement-view";
     }
 
