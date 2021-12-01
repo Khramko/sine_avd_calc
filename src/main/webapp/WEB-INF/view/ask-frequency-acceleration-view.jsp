@@ -7,6 +7,7 @@
 <br>
 <form:form action = "showResult" modelAttribute="sineForm">
     Frequency, Hz <form:input path="frequency"/>
+    <form:errors path="frequency"/>
     <br><br><br>
     Acceleration &ensp;<form:input path="acceleration"/>
     <br><br><br>

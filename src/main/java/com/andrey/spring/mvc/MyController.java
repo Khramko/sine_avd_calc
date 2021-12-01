@@ -3,8 +3,10 @@ package com.andrey.spring.mvc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import javax.validation.Valid;
 
 
 @Controller
@@ -21,14 +23,19 @@ public class MyController {
     }
 
     @RequestMapping("showResult")
-    public String showResult(@ModelAttribute("sineForm") SineForm sineForm){
+    public String showResult(@Valid @ModelAttribute("sineForm") SineForm sineForm
+            , BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "ask-frequency-acceleration-view";
+        } else {
 
-    double velocity = sineForm.calculateVelocity();
-    double displacement = sineForm.calculateDisplacement();
-    sineForm.setVelocity(velocity);
-    sineForm.setDisplacement(displacement);
+            double velocity = sineForm.calculateVelocity();
+            double displacement = sineForm.calculateDisplacement();
+            sineForm.setVelocity(velocity);
+            sineForm.setDisplacement(displacement);
 
-        return "show-result-view";
+            return "show-result-view";
+        }
     }
 
 

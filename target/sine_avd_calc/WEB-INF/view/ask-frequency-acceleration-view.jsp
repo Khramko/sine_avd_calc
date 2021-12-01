@@ -5,8 +5,9 @@
 <h2> Please enter frequency, measured acceleration and choose acceleration, velocity, displacement units. </h2>
 <br>
 <br>
-<form:form action = "showDisplacement" modelAttribute="sineForm">
+<form:form action = "showResult" modelAttribute="sineForm">
     Frequency, Hz <form:input path="frequency"/>
+    <form:errors path="frequency"/>
     <br><br><br>
     Acceleration &ensp;<form:input path="acceleration"/>
     <br><br><br>

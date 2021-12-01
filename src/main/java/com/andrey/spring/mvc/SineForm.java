@@ -1,13 +1,17 @@
 package com.andrey.spring.mvc;
 
 
+import javax.validation.constraints.Positive;
+
+
 public class SineForm {  //This class represents a description of a separate sinusoidal form.
+    @Positive( message = "please enter some real frequency (positive value)")
     private double frequency;
     private double acceleration;
-    private double accelerationUnitCoefficient; //Conversion coefficient of the current acceleration dimension value in CI
     private double velocity;
-    private double velocityUnitCoefficient;// Conversion coefficient of the current velocity dimension value in CI
     private double displacement;
+    private double accelerationUnitCoefficient; //Conversion coefficient of the current acceleration dimension value in CI
+    private double velocityUnitCoefficient;// Conversion coefficient of the current velocity dimension value in CI
     private double displacementUnitCoefficient;//Conversion coefficient of the current displacement dimension value in CI
 
     public double calculateDisplacement(){
@@ -93,10 +97,9 @@ public class SineForm {  //This class represents a description of a separate sin
     }
 
     public void setFrequency(double frequency) {
-        if (frequency>0)
+
         this.frequency = frequency;
-        else
-            throw new RuntimeException();
+
     }
 
     public double getAcceleration() {
