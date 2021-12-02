@@ -2,9 +2,10 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2> Please enter frequency, measured acceleration and choose acceleration, velocity, displacement units. </h2>
+<h2> Please enter frequency, measured acceleration and choose acceleration, velocity, displacement units.
 <br>
-<br>
+Push "OK" button to submit.</h2>
+<br><br><br>
 <form:form action = "showResult" modelAttribute="sineForm">
     Frequency, Hz <form:input path="frequency"/>
     <form:errors path="frequency"/>
@@ -12,19 +13,18 @@
     Acceleration &ensp;<form:input path="acceleration"/>
     <br><br><br>
     Acceleration unit &ensp;&ensp;<form:select path="accelerationUnitCoefficient">
-    <form:option value="9.78" label="g"/>
-    <form:option value="1" label="m/s2"/>
+    <form:options items="${sineForm.accelerationUnits}"/>
+
 </form:select>
 
     <br><br><br>
     Velocity unit &ensp;&ensp;&ensp;&ensp;&ensp;<form:select path="velocityUnitCoefficient">
-    <form:option value="1000" label="mm/s"/>
-    <form:option value="1" label="m/s"/>
+    <form:options items="${sineForm.velocityUnits}"/>
+
 </form:select>
     <br><br><br>
     Displacement unit &ensp;<form:select path="displacementUnitCoefficient">
-        <form:option value="1000" label="mm"/>
-        <form:option value="1" label="m"/>
+    <form:options items="${sineForm.displacementUnits}"/>
     </form:select>
     <br><br><br>
 
